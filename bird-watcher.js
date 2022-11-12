@@ -41,10 +41,8 @@ export function birdsInWeek(birdsPerDay, week) {
  * @returns {number[]} corrected bird count data
  */
 export function fixBirdCountLog(birdsPerDay) {
-  let arrCopy = birdsPerDay;
-  for (let i = 0; i < birdsPerDay.length; i + 2) {
-    let correctBird = arrCopy[i] + 1;
-    arrCopy.splice(i, 1, correctBird);
+  for (let i = 0; i < birdsPerDay.length; i += 2) {
+    birdsPerDay[i] += 1;
   }
-  return arrCopy;
+  return birdsPerDay;
 }
